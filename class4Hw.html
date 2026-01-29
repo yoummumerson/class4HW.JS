@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calendar</title>
+</head>
+<body>
+    <h1>My calendar</h1>
+    <div id="MyCalender"></div>
+
+    <script>
+        function showDate() {
+            var date = new Date();
+
+            var day = date.getDate();
+            var month = date.getMonth() + 1;
+            var year = date.getFullYear();
+
+            day = (day < 10) ? "0" + day : day;
+            month = (month < 10) ? "0" + month : month;
+
+            var currentDate = day + "/" + month + "/" + year;
+            document.getElementById("MyCalender").innerText = currentDate;
+
+            setTimeout(showDate);
+        }
+
+        showDate(); 
+    </script>
+</body>
+</html>
